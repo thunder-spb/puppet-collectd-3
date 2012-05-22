@@ -24,7 +24,7 @@ define collectd::add_monitor($template_source) {
 
   file { "/etc/collectd.d/${name}.conf":
     ensure  => present,
-    content  => template($template_source),
+    content => template($template_source),
     require => Class['collectd::config'],
     notify  => Class['collectd::service'],
   }
